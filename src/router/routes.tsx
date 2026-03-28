@@ -1,14 +1,16 @@
-import { createBrowserRouter } from "react-router-dom";
-import { Main } from "../pages/Main";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+import { UserDetails } from "@/pages/UserDetail/UserDetails";
+import { UserList } from "@/pages/UserList/UserList";
+import { MainLayout } from "@/pages/MainLayout";
 
 export const navRoutes = createBrowserRouter([
   {
-    path: `/`,
-    element: <Main />,
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      { index: true, element: <UserList /> },
+      { path: "details/:id", element: <UserDetails /> },
+      { path: "*", element: <Navigate to="/" replace></Navigate> },
+    ],
   },
-  //   {
-  //     path: `${import.meta.env.VITE_ROUTE_HOME}/process`,
-  //     PageComponent: ProcessPage,
-  //     text: "Subir",
-  //   },
 ]);
