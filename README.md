@@ -27,10 +27,7 @@ Se han empleado las siguientes librerias y herramientas:
 
 2. Ejecutar "npm i"
 
-3. Acceder a la API REST empleada (https://reqres.in/) empleando los datos:
-
-- Correo: tfgpruebaenviocorreo@gmail.com
-- Contraseña: PruebaLaberit123
+3. Acceder a la API REST empleada (https://reqres.in/), empleando los datos proporcionados en el correo
 
 4. Acceder a https://app.reqres.in/api-keys y copiar la "Manage Key"
 
