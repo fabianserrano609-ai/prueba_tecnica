@@ -1,6 +1,7 @@
 import {
   DialogClose,
   DialogContent,
+  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -49,6 +50,9 @@ export function DialogEditUser({
         <DialogTitle className="text-2xl font-bold tracking-tight self-center">
           Edit User
         </DialogTitle>
+        <DialogDescription className="self-center">
+          Modify the necessary data
+        </DialogDescription>
       </DialogHeader>
       <form
         id="form-actionUser"

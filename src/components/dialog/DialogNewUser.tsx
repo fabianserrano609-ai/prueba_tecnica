@@ -1,6 +1,7 @@
 import {
   DialogClose,
   DialogContent,
+  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -33,7 +34,7 @@ export function DialogNewUser({
   const {
     register,
     handleSubmit: handleSubmitForm,
-    formState: { errors },
+    formState: { errors, isDirty },
     reset: resetForm,
   } = useForm<NewUserData>();
 
@@ -54,6 +55,9 @@ export function DialogNewUser({
         <DialogTitle className="text-2xl font-bold tracking-tight self-center">
           Add new User
         </DialogTitle>
+        <DialogDescription className="self-center">
+          Fill the form to create a new user
+        </DialogDescription>
       </DialogHeader>
       <form
         id="form-actionUser"
@@ -118,6 +122,7 @@ export function DialogNewUser({
             variant={"outline"}
             form="form-actionUser"
             type="submit"
+            disabled={!isDirty}
             className="w-auto"
           >
             Add User
