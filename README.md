@@ -7,67 +7,37 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## Herramientas empleadas
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Se han empleado las siguientes librerias y herramientas:
 
-## Expanding the ESLint configuration
+1. Para la obtención de los datos se emplea la API REST ReqRes (https://reqres.in/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. Se ha empleado Shadcn (https://ui.shadcn.com) para ayudar en la creación de componentes de interfaz de usuario
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+3. Para el css se ha usado el framewok Tailwind (https://tailwindcss.com/)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+4. Para los iconos se han empleado los proporcionados por Lucide (https://lucide.dev/icons/)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+5. El control de rutas se ha realizado usando React Router (https://reactrouter.com/)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Pasos de instalación y uso
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Descargar el zip del repositorio público y descomprimir
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. Ejecutar "npm i"
+
+3. Acceder a la API REST empleada (https://reqres.in/) empleando los datos:
+
+- Correo: tfgpruebaenviocorreo@gmail.com
+- Contraseña: PruebaLaberit123
+
+4. Acceder a https://app.reqres.in/api-keys y copiar la "Manage Key"
+
+5. Acceder al archivo .env y cambiar la variable VITE_API_KEY con el valor copiado en el paso anterior, eliminando la parte "x-api-key:"
+
+6. Ejecutar el proyecto con "npm run dev"
+
+7. Cualquier cambio realizado se puede comprobar en la seccion de "Data" dentro de la ReqRes (https://app.reqres.in/dashboard)
+
+8. A la hora de insertar o editar un usuario, en el campo de "Avatar" se puede emplear una url como "https://i.pravatar.cc/150?img=", añadiendo un numero random a la variable "img", por ejemplo "img=16".
