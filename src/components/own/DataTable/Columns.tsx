@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 export const columns: ColumnDef<UserData>[] = [
   {
-    accessorKey: "data_first_name",
+    accessorKey: "first_name",
     header: ({ column }) => {
       return (
         <Button
@@ -32,12 +32,9 @@ export const columns: ColumnDef<UserData>[] = [
     accessorKey: "avatar",
     header: "Avatar",
     cell: ({ row }) => {
-      const userId = row.original.userId;
-      const urlRandomImage = "https://i.pravatar.cc/150?img=";
-
       return (
         <Avatar>
-          <AvatarImage src={urlRandomImage + userId} alt="avatar" />
+          <AvatarImage src={row.original.avatar} alt="avatar" />
           <AvatarFallback>{row.getValue("first_name")}</AvatarFallback>
         </Avatar>
       );

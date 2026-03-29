@@ -1,4 +1,5 @@
-export interface ApiResponse {
+/* TO LIST USERS */
+export interface ApiResponseList {
   data: ApiItem[];
   meta: Meta;
 }
@@ -28,4 +29,21 @@ export interface Meta {
   limit: number;
   total: number;
   pages: number;
+}
+
+/* TO VIEW USER DATA */
+export interface ApiResponseItem {
+  data: ApiItem;
+}
+
+/* TO ADD USER OR EDIT USER */
+export interface NewUserDataToSend {
+  data: NewUserData;
+}
+
+export interface NewUserData {
+  email: string;
+  avatar: string;
+  last_name: string;
+  first_name: string;
 }

@@ -5,7 +5,7 @@ import { navRoutes } from "./router/routes.tsx";
 import { RouterProvider } from "react-router-dom";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <RouterProvider router={navRoutes} />
-  </StrictMode>,
+  <RouterProvider router={navRoutes} />,
+  // <StrictMode>
+  // </StrictMode>
 );
